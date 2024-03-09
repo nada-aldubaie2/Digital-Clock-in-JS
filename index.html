@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time</title>
+	<style>
+		body {
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+		}
+		main{
+      display: flex;
+    align-items: center;
+    }
+		#time {
+            display: flex;
+            border: 5px solid rgb(252, 177, 1);
+            padding: 10px;
+            margin: 25px 10px;
+            font-size: 48px;
+            font-family: cursive;
+            color: #ffb100;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6%;
+            box-shadow: 0px -1px 9px 3px #ccb704;
+            justify-content: center;
+            align-items:center;
+            flex-wrap: wrap;
+		}
+	</style>
+
+</head>
+<body>
+<main>
+    <div id="time">
+      <div id="hours" style="padding: 5px;""></div>
+      <div id="minutes" style="padding: 5px;""></div>
+      <div id="seconds" style="padding: 5px;""></div>
+    </div>
+</main>
+
+	<script>
+		function updateTime() {
+			var now = new Date();
+
+			var hours = document.getElementById("hours");
+			hours.innerHTML = (now.getHours() < 10 ? "0" : "") + now.getHours() +" : " + " ";
+
+            var minutes = document.getElementById("minutes");
+			minutes.innerHTML = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes() + "  : " + " ";
+
+			var seconds = document.getElementById("seconds");
+			seconds.innerHTML = (now.getSeconds() < 10 ? "0" : "") + now.getSeconds();
+		}
+		setInterval(updateTime, 1000);
+	</script>
+</body>
+</html>
